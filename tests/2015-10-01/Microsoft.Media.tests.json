@@ -2,19 +2,20 @@
   "tests": [
     {
       "name": "Media Services - valid, storageAccounts: none",
-      "definition": "https://schema.management.azure.com/schemas/2015-10-01/Microsoft.Media.json#/resourceDefinitions/mediaServices",
+      "definition": "https://schema.management.azure.com/schemas/2015-10-01/Microsoft.Media.json#/resourceDefinitions/mediaservices",
       "json": {
-        "type": "Microsoft.Media/mediaServices",
+        "type": "Microsoft.Media/mediaservices",
         "apiVersion": "2015-10-01",
         "name": "mediaservicename",
         "id": "guid",
-        "location": "West Us"
+        "location": "West US",
+        "properties": { }
       }
     },
     
     {
       "name": "Media Services - invalid, name: too short",
-      "definition": "https://schema.management.azure.com/schemas/2015-10-01/Microsoft.Media.json#/resourceDefinitions/mediaServices",
+      "definition": "https://schema.management.azure.com/schemas/2015-10-01/Microsoft.Media.json#/resourceDefinitions/mediaservices",
       "expectedErrors": [
         {
           "message": "Data does not match any schemas from \"oneOf\"",
@@ -22,17 +23,18 @@
         }
       ],
       "json": {
-        "type": "Microsoft.Media/mediaServices",
+        "type": "Microsoft.Media/mediaservices",
         "apiVersion": "2015-10-01",
         "name": "12",
         "id": "guid",
-        "location": "West Us"
+        "location": "West US",
+        "properties": { }
       }
     },
 
     {
       "name": "Media Services - invalid, name: invalid character",
-      "definition": "https://schema.management.azure.com/schemas/2015-10-01/Microsoft.Media.json#/resourceDefinitions/mediaServices",
+      "definition": "https://schema.management.azure.com/schemas/2015-10-01/Microsoft.Media.json#/resourceDefinitions/mediaservices",
       "expectedErrors": [
         {
           "message": "Data does not match any schemas from \"oneOf\"",
@@ -40,16 +42,17 @@
         }
       ],
       "json": {
-        "type": "Microsoft.Media/mediaServices",
+        "type": "Microsoft.Media/mediaservices",
         "apiVersion": "2015-10-01",
         "name": "media-servicename",
         "id": "guid",
-        "location": "West Us"
+        "location": "West US",
+        "properties": { }
       }
     },
 {
       "name": "Media Services - invalid, name: too long",
-      "definition": "https://schema.management.azure.com/schemas/2015-10-01/Microsoft.Media.json#/resourceDefinitions/mediaServices",
+      "definition": "https://schema.management.azure.com/schemas/2015-10-01/Microsoft.Media.json#/resourceDefinitions/mediaservices",
       "expectedErrors": [
         {
           "message": "Data does not match any schemas from \"oneOf\"",
@@ -57,53 +60,41 @@
         }
       ],
       "json": {
-        "type": "Microsoft.Media/mediaServices",
+        "type": "Microsoft.Media/mediaservices",
         "apiVersion": "2015-10-01",
         "name": "123456789012345678901234567",
         "id": "guid",
-        "location": "West Us"
+        "location": "West US",
+        "properties": { }
       }
     },
 
     {
-      "name": "Media Services - valid, empty storage accounts, tags",
-      "definition": "https://schema.management.azure.com/schemas/2015-10-01/Microsoft.Media.json#/resourceDefinitions/mediaServices",
-      "json": {
-        "type": "Microsoft.Media/mediaServices",
-        "apiVersion": "2015-10-01",
-        "name": "mediaservicename",
-        "id": "guid",
-        "location": "West Us",
-        "tags": {}
-      }
-    },
-    
-    {
       "name": "Media Services - valid tags",
-      "definition": "https://schema.management.azure.com/schemas/2015-10-01/Microsoft.Media.json#/resourceDefinitions/mediaServices",
+      "definition": "https://schema.management.azure.com/schemas/2015-10-01/Microsoft.Media.json#/resourceDefinitions/mediaservices",
       "json": {
-        "type": "Microsoft.Media/mediaServices",
+        "type": "Microsoft.Media/mediaservices",
         "apiVersion": "2015-10-01",
         "name": "mediaservicename",
         "id": "guid",
-        "location": "West Us",
+        "location": "West US",
+        "properties": { },
         "tags":
         {
-          "stringTag": "stringValue",
-          "integerTag": 2
+          "stringTag": "stringValue"
         }
       }
     },
         
     {
       "name": "Media Services - valid, storageAccount single",
-      "definition": "https://schema.management.azure.com/schemas/2015-10-01/Microsoft.Media.json#/resourceDefinitions/mediaServices",
+      "definition": "https://schema.management.azure.com/schemas/2015-10-01/Microsoft.Media.json#/resourceDefinitions/mediaservices",
       "json": {
-        "type": "Microsoft.Media/mediaServices",
+        "type": "Microsoft.Media/mediaservices",
         "apiVersion": "2015-10-01",
         "name": "mediaservicename",
         "id": "guid",
-        "location": "West Us",
+        "location": "West US",
         "properties" : {
           "storageAccounts" : [
             {
@@ -117,13 +108,13 @@
     
     {
       "name": "Media Services - valid, StorageAccount multiple",
-      "definition": "https://schema.management.azure.com/schemas/2015-10-01/Microsoft.Media.json#/resourceDefinitions/mediaServices",
+      "definition": "https://schema.management.azure.com/schemas/2015-10-01/Microsoft.Media.json#/resourceDefinitions/mediaservices",
       "json": {
-        "type": "Microsoft.Media/mediaServices",
+        "type": "Microsoft.Media/mediaservices",
         "apiVersion": "2015-10-01",
         "name": "mediaservicename",
         "id": "guid",
-        "location": "West Us",
+        "location": "West US",
         "properties" : {
           "storageAccounts": [
             {
@@ -141,7 +132,7 @@
     
     {
       "name": "Media Services - invalid, StorageAccount no id",
-      "definition": "https://schema.management.azure.com/schemas/2015-10-01/Microsoft.Media.json#/resourceDefinitions/mediaServices",
+      "definition": "https://schema.management.azure.com/schemas/2015-10-01/Microsoft.Media.json#/resourceDefinitions/mediaservices",
       "expectedErrors": [
         {
           "message": "Data does not match any schemas from \"oneOf\"",
@@ -150,11 +141,11 @@
         }
       ],
       "json": {
-        "type": "Microsoft.Media/mediaServices",
+        "type": "Microsoft.Media/mediaservices",
         "apiVersion": "2015-10-01",
         "name": "mediaservicename",
         "id": "guid",
-        "location": "West Us",
+        "location": "West US",
         "properties" : {
           "storageAccounts": [
             {
@@ -167,7 +158,7 @@
     
     {
       "name": "Media Services - invalid apiVersion",
-      "definition": "https://schema.management.azure.com/schemas/2015-10-01/Microsoft.Media.json#/resourceDefinitions/mediaServices",
+      "definition": "https://schema.management.azure.com/schemas/2015-10-01/Microsoft.Media.json#/resourceDefinitions/mediaservices",
       "expectedErrors": [
         {
           "message": "No enum match for: \"2015-01-01\"",
@@ -175,12 +166,12 @@
         }
       ],
       "json": {
-        "type": "Microsoft.Media/mediaServices",
+        "type": "Microsoft.Media/mediaservices",
         "apiVersion": "2015-01-01",
         "name": "mediaservicename",
         "id": "guid",
-        "location": "West Us",
-        "storageAccounts": { }
+        "location": "West US",
+        "properties" : { }
       }
     }
   ]
